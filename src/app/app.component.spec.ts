@@ -5,7 +5,7 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
       ],
     }).compileComponents();
   });
@@ -16,11 +16,6 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'angularRentalProject'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('angularRentalProject');
-  });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);

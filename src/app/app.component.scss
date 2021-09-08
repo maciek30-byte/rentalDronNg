@@ -1,0 +1,14 @@
+:host {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: inherit;
+}
+
+.app-content {
+  display: flex;
+  background-color: lightskyblue;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-wrap: wrap;
+}

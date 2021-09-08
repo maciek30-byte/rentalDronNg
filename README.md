@@ -1,6 +1,5 @@
 # AngularRentalProject
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
+This is project of webapp to rent a dron :)
 
 ## Development server
 
