@@ -1,5 +1,5 @@
 <input
-  (ngModelChange)='onModelChange()'
+  (ngModelChange)='onModelChange($event)'
   [(ngModel)]='searchPhrase'
   placeholder='Search drones...'
   type='text'

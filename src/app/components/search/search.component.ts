@@ -20,8 +20,8 @@ export class SearchComponent {
     });
   }
 
-  onModelChange() {
-    this.debounce$.next(this.searchPhrase);
+  onModelChange(searchPhrase: string) {
+    this.debounce$.next(searchPhrase);
   }
 
 }
