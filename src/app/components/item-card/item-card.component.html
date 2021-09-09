@@ -1,4 +1,15 @@
-<p> Name: {{drone.name}}</p>
-<img [src]='drone.photo'>
-<p> Price: $ {{drone.price}}</p>
-<button (click)='onShowMore()'> More</button>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{drone.name}}</mat-card-title>
+    <mat-card-subtitle>$ {{drone.price}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <img [src]='drone.photo' alt='Photo of super drone' mat-card-image>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button (click)='onShowMore()' mat-raised-button>MORE</button>
+    <button mat-raised-button>RENT</button>
+  </mat-card-actions>
+</mat-card>
