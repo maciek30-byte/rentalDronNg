@@ -1,0 +1,19 @@
+:host {
+  margin-left: 20px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+input {
+  all: unset;
+}
+
+i {
+  margin-left: 5px;
+  cursor: pointer;
+
+  &:hover {
+    color: purple;
+  }
+}

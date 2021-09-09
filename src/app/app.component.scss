@@ -1,12 +1,12 @@
 :host {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 80px 1fr auto;
   width: inherit;
 }
 
 .app-content {
   display: flex;
-  background-color: lightskyblue;
+  background-color: lightslategray;
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;

@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header (onSearchPhrase)='onSearchPhrase($event)'></app-header>
 <div class='app-content'>
   <item-card *ngFor='let drone of droneList$ | async' [drone]='drone'>
   </item-card>
