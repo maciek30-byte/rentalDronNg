@@ -1,5 +1,6 @@
-<div mat-dialog-title> Renting {{data.name}}</div>
+<div mat-dialog-title> Renting {{drone.name}}</div>
 <div mat-dialog-content>
+  <div>Estimated price: $ {{estimatedPrice(rentForm.get("startDate")?.value, rentForm.get("endDate")?.value)}}</div>
   <form [formGroup]='rentForm'>
     <mat-form-field appearance='fill' class='example-full-width'>
       <mat-label>

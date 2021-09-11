@@ -15,22 +15,31 @@ export class ItemRentComponent {
     name: ['', Validators.required],
     surname: ['', Validators.required],
     email: ['', Validators.required], //todo: add email validation
-    startDate: ['', Validators.required],
-    endDate: ['', Validators.required],
+    startDate: [new Date(), Validators.required],
+    endDate: [new Date(), Validators.required],
   });
+  private _newPrice = 0;
 
   constructor(
     private readonly formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<ItemRentComponent>,
     public dialog: MatDialog,
-    @Inject(MAT_DIALOG_DATA) public data: DroneItem) {
+    @Inject(MAT_DIALOG_DATA) public drone: DroneItem) {
+  }
+
+  public estimatedPrice(start: Date, end: Date) {
+    // @ts-ignore
+    const diffTime = Math.abs(end - start);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    this._newPrice = diffDays * this.drone.price;
+    return this._newPrice;
   }
 
   onConfirm() {
     this.dialogRef.close();
     const dialogRef = this.dialog.open(RentConfirmationComponent, {
       width: '500px',
-      data: this.rentForm.value,
+      data: { form: this.rentForm.value, drone: { ...this.drone, price: this._newPrice } },
     });
 
     dialogRef.afterClosed().subscribe(result => {

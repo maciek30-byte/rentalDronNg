@@ -1,7 +1,11 @@
 <div mat-dialog-title>Confirmation</div>
 <div mat-dialog-content>
-  {{form.name}}
+  <p>Who: {{data.form.name}}, {{data.form.surname}}</p>
+  <p>When: {{data.form.startDate | date }} - {{data.form.endDate | date}}</p>
+  <p>What: Drone {{data.drone.name}}</p>
+  <p>Price: $ {{data.drone.price}}</p>
+  <p>Code to show when pick up device: g42t5645645ga3q4</p>
 </div>
 <div mat-dialog-actions>
-  <button [mat-dialog-close]='form' cdkFocusInitial mat-raised-button>Ok</button>
+  <button [mat-dialog-close]='data.form' cdkFocusInitial mat-raised-button>Ok</button>
 </div>
