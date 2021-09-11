@@ -9,6 +9,8 @@ import { DroneItem, RentingForm } from '../../interfaces/drone.interface';
 })
 export class RentConfirmationComponent {
 
+  public randomCode: string = btoa(Math.random().toString()).slice(0, 12);
+
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: { form: RentingForm, drone: DroneItem }) {
   }

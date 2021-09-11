@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ItemInfoComponent } from '../../components/item-info/item-info.component';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +9,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class AppHeaderComponent {
   @Output() onSearchPhrase = new EventEmitter;
+
+  constructor(public dialog: MatDialog) {
+  }
+
+  onShowInfo() {
+    this.dialog.open(ItemInfoComponent, {
+      width: '500px',
+    });
+  }
 }

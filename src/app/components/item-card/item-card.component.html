@@ -1,14 +1,7 @@
-<mat-card>
-
-  <mat-card-title>{{drone.name}}</mat-card-title>
-  <mat-card-subtitle>Price per day: $ {{drone.price}}</mat-card-subtitle>
-
-
-  <img [src]='drone.photo' alt='Photo of super drone'>
-
-
-  <mat-card-actions>
-    <button (click)='onShowMore()' mat-raised-button>MORE</button>
-    <button (click)='onRent()' mat-raised-button>RENT</button>
-  </mat-card-actions>
-</mat-card>
+<h1>{{drone.name}}</h1>
+<p>Price per day: $ {{drone.price}}</p>
+<img [src]='drone.photo' alt='Photo of super drone'>
+<div class='card-footer'>
+  <button (click)='onShowMore()' mat-raised-button>MORE</button>
+  <button (click)='onRent()' mat-raised-button>RENT</button>
+</div>

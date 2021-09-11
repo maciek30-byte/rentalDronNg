@@ -17,3 +17,20 @@ i {
 h1 {
   margin: 0;
 }
+
+button {
+  margin-left: 20px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 640px) {
+  button {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 470px) {
+  h1 {
+    display: none;
+  }
+}
+

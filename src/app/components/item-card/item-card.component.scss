@@ -1,7 +1,28 @@
 :host {
   padding: 10px;
+  height: 285px;
+  width: 200px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-footer {
+  margin-top: auto;
+
+  button {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 }
 
 img {
-  width: 100px;
+  width: 150px;
+}
+
+h1 {
+  font-size: 20px;
 }

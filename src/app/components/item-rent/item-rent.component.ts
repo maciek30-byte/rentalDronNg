@@ -1,7 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { DroneItem } from '../../interfaces/drone.interface';
 import { FormBuilder, Validators } from '@angular/forms';
+
+import { DroneItem } from '../../interfaces/drone.interface';
 import { RentConfirmationComponent } from '../rent-confirmation/rent-confirmation.component';
 
 @Component({
@@ -10,21 +11,27 @@ import { RentConfirmationComponent } from '../rent-confirmation/rent-confirmatio
   styleUrls: ['./item-rent.component.scss'],
 })
 export class ItemRentComponent {
-
+  private _newPrice = 0;
+  private _startDate = new Date();
+  private _endDate = new Date(this._startDate.getTime() + 86400000);
   public rentForm = this.formBuilder.group({
     name: ['', Validators.required],
     surname: ['', Validators.required],
-    email: ['', Validators.required], //todo: add email validation
-    startDate: [new Date(), Validators.required],
-    endDate: [new Date(), Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    startDate: [this._startDate, Validators.required],
+    endDate: [this._endDate, Validators.required],
   });
-  private _newPrice = 0;
 
   constructor(
     private readonly formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<ItemRentComponent>,
     public dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public drone: DroneItem) {
+  }
+
+  // convenience getter for easy access to form fields
+  get f() {
+    return this.rentForm.controls;
   }
 
   public estimatedPrice(start: Date, end: Date) {
@@ -37,13 +44,10 @@ export class ItemRentComponent {
 
   onConfirm() {
     this.dialogRef.close();
-    const dialogRef = this.dialog.open(RentConfirmationComponent, {
+    this.dialog.open(RentConfirmationComponent, {
       width: '500px',
       data: { form: this.rentForm.value, drone: { ...this.drone, price: this._newPrice } },
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The rent confirmation was closed', result);
-    });
   }
 }

@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
 
 import { AppComponent } from './app.component';
 import { AppHeaderModule } from './modules/app-header/app-header.module';
@@ -17,6 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { RentConfirmationComponent } from './components/rent-confirmation/rent-confirmation.component';
+import { ItemInfoComponent } from './components/item-info/item-info.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +25,13 @@ import { RentConfirmationComponent } from './components/rent-confirmation/rent-c
     ItemDetailsComponent,
     ItemRentComponent,
     RentConfirmationComponent,
+    ItemInfoComponent,
   ],
   entryComponents: [
     ItemDetailsComponent,
     ItemRentComponent,
     RentConfirmationComponent,
+    ItemInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,6 @@ import { RentConfirmationComponent } from './components/rent-confirmation/rent-c
     AppFooterModule,
     MatDialogModule,
     MatButtonModule,
-    MatCardModule,
     BrowserAnimationsModule,
     FormsModule,
     MatDatepickerModule,
