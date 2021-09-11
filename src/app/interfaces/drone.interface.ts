@@ -5,3 +5,13 @@ export interface DroneItem {
   isRented?: boolean,
   description?: string,
 }
+
+export interface RentingForm {
+  name: string,
+  surname: string,
+  email: string
+  totalPrice: number,
+  droneId: string,
+  startDate: string,
+  endDate: string,
+}

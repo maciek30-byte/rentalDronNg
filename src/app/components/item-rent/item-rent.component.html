@@ -1,0 +1,48 @@
+<div mat-dialog-title> Renting {{data.name}}</div>
+<div mat-dialog-content>
+  <form [formGroup]='rentForm'>
+    <mat-form-field appearance='fill' class='example-full-width'>
+      <mat-label>
+        Name
+        <i *ngIf='!rentForm.get("name")?.value' class='fas fa-star-of-life'></i>
+      </mat-label>
+      <input formControlName='name' matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance='fill' class='example-full-width'>
+      <mat-label>
+        Surname
+        <i *ngIf='!rentForm.get("surname")?.value' class='fas fa-star-of-life'></i>
+      </mat-label>
+      <input formControlName='surname' matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance='fill' class='example-full-width'>
+      <mat-label>
+        Email
+        <i *ngIf='!rentForm.get("email")?.value' class='fas fa-star-of-life'></i>
+      </mat-label>
+      <input formControlName='email' matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance='fill'>
+      <mat-label>
+        Enter a date range
+        <i *ngIf='!(rentForm.get("startDate")?.value && rentForm.get("endDate")?.value)'
+           class='fas fa-star-of-life'></i>
+      </mat-label>
+      <mat-date-range-input [rangePicker]='picker'>
+        <input formControlName='startDate' matStartDate placeholder='Start date'>
+        <input formControlName='endDate' matEndDate placeholder='End date'>
+      </mat-date-range-input>
+      <mat-datepicker-toggle [for]='picker' matSuffix></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+
+  </form>
+
+</div>
+<div mat-dialog-actions>
+  <button (click)='onConfirm()' [disabled]='rentForm.invalid' cdkFocusInitial mat-raised-button>Ok</button>
+  <button cdkFocusInitial mat-dialog-close mat-raised-button>Cancel</button>
+</div>
