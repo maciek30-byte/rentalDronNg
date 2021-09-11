@@ -10,8 +10,15 @@
 
 i {
   font-size: 30px;
-  margin-right: 10px;
   color: purple;
+
+  &.fa-cat {
+    margin-right: 10px;
+  }
+
+  &.fa-info {
+    margin-left: 10px;
+  }
 }
 
 h1 {
@@ -22,15 +29,27 @@ button {
   margin-left: 20px;
 }
 
+@media screen and (min-width: 641px) {
+  .fa-info {
+    display: none;
+  }
+}
+
 @media screen and (min-width: 0px) and (max-width: 640px) {
+  :host {
+    justify-content: center;
+  }
   button {
     display: none;
   }
 }
 
-@media screen and (min-width: 0px) and (max-width: 470px) {
+@media screen and (min-width: 0px) and (max-width: 486px) {
   h1 {
     display: none;
+  }
+  search-input {
+    margin: unset;
   }
 }
 
